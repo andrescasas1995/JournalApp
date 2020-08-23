@@ -1,28 +1,43 @@
 import React from 'react'
+import moment from 'moment'
+import { useDispatch } from 'react-redux';
+import { activeNote } from '../../actions/notes';
 
-export const JournalEntry = () => {
+export const JournalEntry = ({ id, date, title, body, url }) => {
+
+    const dispatch = useDispatch();
+    const noteDate = moment(date);
+
+    const handleEntryClick = () => {
+        dispatch(activeNote(id, { date, title, body, url }));
+    }
+
     return (
-        <div className="journal__entry">
-            <div
-                className="journal__entry-picture"
-                style={{
-                    backgroundSize: 'cover',
-                    backgroundRepeat: 'no-repeat',
-                    backgroundImage: 'url(https://blog.foto24.com/wp-content/uploads/2019/02/6-fotografia-de-Alejandro-Rodriguez-683x1024.jpg)'
-                }}
-            />
+        <div
+            className="journal__entry animate__animated animate__fadeIn"
+            onClick={handleEntryClick}
+        >
+            {!!url &&
+                <div
+                    className="journal__entry-picture"
+                    style={{
+                        backgroundSize: 'cover',
+                        backgroundImage: `url(${url})`
+                    }}
+                />
+            }
             <div className="journal__entry-body">
                 <p className="journal__entry-title">
-                    Un nuevo día
+                    { title }
                 </p>
                 <p className="journal__entry-content">
-                    esto es un monton de tecto que estoy agregando ara poder hacer las pruebas
+                    { body }
                 </p>
             </div>
 
             <div className="journal__entry-date-box">
-                <span>Monday</span>
-                <span>28</span>
+                <span>{noteDate.format("dddd")}</span>
+                <span><b>{noteDate.format("Do")}</b></span>
             </div>
         </div>
     )

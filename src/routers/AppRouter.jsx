@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import {
-    BrowserRouter as Router,
+    HashRouter as Router,
     Switch,
     Redirect
 } from "react-router-dom";
@@ -11,6 +11,7 @@ import { useDispatch } from "react-redux";
 import { login } from "../actions/auth";
 import { PrivateRoute } from './PrivateRoute';
 import { PublicRoute } from './PublicRoute';
+import { loadNotes } from "../actions/notes";
 
 export const AppRouter = () => {
 
@@ -23,6 +24,8 @@ export const AppRouter = () => {
             if (user?.uid) {
                 dispatch(login(user.uid, user.displayName));
                 setIsLoggedIn(true);
+
+                dispatch(loadNotes(user.uid));
             } else {
                 setIsLoggedIn(false);
             }
@@ -37,7 +40,7 @@ export const AppRouter = () => {
     }
 
     return (
-        <Router>
+        <Router basename="/">
             <div>
                 <Switch>
                     <PublicRoute

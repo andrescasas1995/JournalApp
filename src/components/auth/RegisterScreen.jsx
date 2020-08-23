@@ -13,10 +13,10 @@ export const RegisterScreen = () => {
     const dispatch = useDispatch();
     const { msgError } = useSelector(state => state.ui);
     const [formValues, handleInputChange] = useForm({
-        name: 'Andres Casas',
-        email: 'andrescasas@gmail.com',
-        password: '123456',
-        password2: '123456'
+        // name: 'Andres Casas',
+        // email: 'andrescasas@gmail.com',
+        // password: '123456',
+        // password2: '123456'
     });
 
     const { name, email, password, password2 } = formValues;
@@ -49,7 +49,10 @@ export const RegisterScreen = () => {
         <>
             <h3 className="auth__title">Register</h3>
 
-            <form onSubmit={handleRegister}>
+            <form
+                className="animate__animated animate__fadeIn animate__faster"
+                onSubmit={handleRegister}
+            >
                 {msgError && 
                     <div className="auth__alert-error">
                         {msgError}
@@ -63,6 +66,7 @@ export const RegisterScreen = () => {
                     autoComplete="off"
                     value={name}
                     onChange={handleInputChange}
+                    required
                 />
                 <input
                     className="auth__input"
@@ -72,6 +76,7 @@ export const RegisterScreen = () => {
                     autoComplete="off"
                     value={email}
                     onChange={handleInputChange}
+                    required
                 />
                 <input
                     className="auth__input"
@@ -81,6 +86,7 @@ export const RegisterScreen = () => {
                     autoComplete="off"
                     value={password}
                     onChange={handleInputChange}
+                    required
                 />
                 <input
                     className="auth__input"
@@ -90,6 +96,7 @@ export const RegisterScreen = () => {
                     autoComplete="off"
                     value={password2}
                     onChange={handleInputChange}
+                    required
                 />
 
                 <button
