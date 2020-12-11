@@ -72,6 +72,6 @@ describe('Pruebas con las acciones de Auth', () => {
                 uid: 'fYYrX6ZV7oOD4bJHtciBV0RZWKB3',
                 displayName: null
             }
-        });    });
-
-})
+        });
+    });
+});

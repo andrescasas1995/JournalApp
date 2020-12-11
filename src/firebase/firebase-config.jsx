@@ -3,22 +3,41 @@ import 'firebase/firestore';
 import 'firebase/auth';
 
 const firebaseConfig = {
-    apiKey: "AIzaSyBM8bACib0NUS89mZVI5yPk1WLOOu5v6H4",
-    authDomain: "react-app-cursos-31180.firebaseapp.com",
-    databaseURL: "https://react-app-cursos-31180.firebaseio.com",
-    projectId: "react-app-cursos-31180",
-    storageBucket: "react-app-cursos-31180.appspot.com",
-    messagingSenderId: "1036827059786",
-    appId: "1:1036827059786:web:8fc1dfd6e842fbb19768b3"
+    apiKey: process.env.REACT_APP_APIKEY,
+    authDomain: process.env.REACT_APP_AUTHDOMAIN,
+    databaseURL: process.env.REACT_APP_DATABASEURL,
+    projectId: process.env.REACT_APP_PROJECTID,
+    storageBucket: process.env.REACT_APP_STORAGEBUCKET,
+    messagingSenderId: process.env.REACT_APP_MESSAGINGSENDERID,
+    appId: process.env.REACT_APP_APPID,
 };
+
+// const firebaseConfigTesting = {
+//     apiKey: "AIzaSyB_iKIhpuzf-aRJS2zQyMiyeGOuDbKsq_g",
+//     authDomain: "react-journal-app-test.firebaseapp.com",
+//     databaseURL: "https://react-journal-app-test.firebaseio.com",
+//     projectId: "react-journal-app-test",
+//     storageBucket: "react-journal-app-test.appspot.com",
+//     messagingSenderId: "872712789406",
+//     appId: "1:872712789406:web:78ce173e399a0345db4a8f"
+//   };
+
+
+// if( process.env.NODE_ENV === 'test' ) {
+//     // testing
+//     firebase.initializeApp(firebaseConfigTesting);
+// } else {
+//     //dev/prod
+//     firebase.initializeApp(firebaseConfig);
+// }
 
 firebase.initializeApp(firebaseConfig);
 
 const db = firebase.firestore();
-const googleAutProvider = new firebase.auth.GoogleAuthProvider();
+const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
 
 export {
     db,
-    googleAutProvider,
+    googleAuthProvider,
     firebase
 }
