@@ -32,15 +32,13 @@ exports[`Pruebas en <JournalEntry /> debe de mostrarse correctamente 1`] = `
     className="journal__entry-date-box"
   >
     <span>
-       
       Wednesday
-       
     </span>
-    <h4>
-       
-      31st
-       
-    </h4>
+    <span>
+      <b>
+        31st
+      </b>
+    </span>
   </div>
 </div>
 `;

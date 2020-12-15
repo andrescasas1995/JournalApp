@@ -38,8 +38,7 @@ const wrapper = mount(
             <LoginScreen /> 
         </MemoryRouter>
     </Provider>
-
-)
+);
 
 describe('Pruebas en <LoginScreen />', () => {
 
@@ -63,8 +62,6 @@ describe('Pruebas en <LoginScreen />', () => {
     
     
     test('debe de disparar el startLogin con los respectivos argumentos', () => {
-        
-
         wrapper.find('form').prop('onSubmit')({ 
             preventDefault(){}
         });

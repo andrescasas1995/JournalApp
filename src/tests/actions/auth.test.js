@@ -21,8 +21,6 @@ describe('Pruebas con las acciones de Auth', () => {
         store = mockStore(initState);
     });
 
-
-
     test('login y logout deben de crear la acción respectiva', () => {
        
         const uid = 'ABC123';
@@ -41,7 +39,8 @@ describe('Pruebas con las acciones de Auth', () => {
 
         expect( logoutAction ).toEqual({
             type: types.logout
-        });    });
+        });
+    });
 
 
     test('debe de realizar el startLogout', async() => {
@@ -69,7 +68,7 @@ describe('Pruebas con las acciones de Auth', () => {
         expect( actions[1] ).toEqual({
             type: types.login,
             payload: {
-                uid: 'fYYrX6ZV7oOD4bJHtciBV0RZWKB3',
+                uid: 'GWas6o9jioZp7zeF5v7QYA2AXtD2',
                 displayName: null
             }
         });

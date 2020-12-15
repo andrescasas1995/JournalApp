@@ -2,16 +2,15 @@
 
 exports[`Pruebas en <NoteScreen /> debe de mostrarse correctamente 1`] = `
 <div
-  className="notes__main-content"
+  className="notes__main-content animate__animated animate__backInDown animate__faster"
 >
   <div
     className="notes__appbar"
   >
     <span>
-      28 de agosto 2020
+      Wednesday, December 31st 1969, 7:00:00 pm
     </span>
     <input
-      id="fileSelector"
       name="file"
       onChange={[Function]}
       style={
@@ -52,7 +51,7 @@ exports[`Pruebas en <NoteScreen /> debe de mostrarse correctamente 1`] = `
       className="notes__textarea"
       name="body"
       onChange={[Function]}
-      placeholder="What happened today"
+      placeholder="What happend today"
       value="mundo"
     />
   </div>

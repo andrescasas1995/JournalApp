@@ -41,10 +41,6 @@ const initState = {
 let store = mockStore(initState);
 store.dispatch = jest.fn();
 
-
-
-
-
 describe('Pruebas en <AppRouter />', () => {
 
     test('debe de llamar el login si estoy autenticado', async() => {
@@ -69,7 +65,7 @@ describe('Pruebas en <AppRouter />', () => {
         });
 
 
-        expect( login ).toHaveBeenCalledWith('fYYrX6ZV7oOD4bJHtciBV0RZWKB3', null);
+        expect( login ).toHaveBeenCalledWith('GWas6o9jioZp7zeF5v7QYA2AXtD2', null);
 
     });
 });

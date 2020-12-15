@@ -17,19 +17,22 @@ Array [
       name="email"
       onChange={[Function]}
       placeholder="Email"
+      required={true}
       type="text"
       value=""
     />
     <input
+      autoComplete="off"
       className="auth__input"
       name="password"
       onChange={[Function]}
       placeholder="Password"
+      required={true}
       type="password"
       value=""
     />
     <button
-      className="btn btn-primary btn-block"
+      className="btn btn-secondary btn-block"
       disabled={false}
       type="submit"
     >
@@ -38,7 +41,9 @@ Array [
     <div
       className="auth__social-networks"
     >
-      <p>
+      <p
+        className="auth__title"
+      >
         Login with social networks
       </p>
       <div
@@ -63,13 +68,17 @@ Array [
         </p>
       </div>
     </div>
-    <a
-      className="link"
-      href="/auth/register"
-      onClick={[Function]}
+    <div
+      className="text-right"
     >
-      Create new account
-    </a>
+      <a
+        className="link"
+        href="/auth/register"
+        onClick={[Function]}
+      >
+        Create new acount
+      </a>
+    </div>
   </form>,
 ]
 `;
